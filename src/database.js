@@ -95,7 +95,7 @@ const userSchema = new Schema({
     users: [{ type: Types.ObjectId, ref: 'User' }],
 });*/
 
-const vintedChannelSchema = new Schema({
+const vinted-updatedChannelSchema = new Schema({
     channelId: { type: String, unique: true, required: true },
     lastUpdated: { type: Date, default: Date.now },
     keepMessageSent: { type: Boolean, default: false },
@@ -111,7 +111,7 @@ const vintedChannelSchema = new Schema({
 // Create models
 //const Group = model('Group', groupSchema);
 const User = model('User', userSchema);
-const VintedChannel = model('VintedChannel', vintedChannelSchema);
+const VintedChannel = model('VintedChannel', vinted-updatedChannelSchema);
 
 Logger.info("Database models loaded.");
 
