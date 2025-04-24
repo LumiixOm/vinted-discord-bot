@@ -1,5 +1,5 @@
 import ProxyManager from "./src/utils/proxy_manager.js";
-import { VintedItem } from "./src/entities/vinted_item.js";
+import { VintedItem } from "./src/entities/vinted-updated_item.js";
 import { filterItemsByUrl } from "./src/services/url_service.js";
 import { Preference, buildCategoryMapFromRoots } from "./src/database.js";
 import client from "./src/client.js";
@@ -89,19 +89,19 @@ Logger.info('Fetching catalog roots from Vinted');
 
 await getCatalogRoots(cookie);
 
-const sendToChannel = async (item, user, vintedChannel) => {
-    // get the domain from the URL between vinted. and the next /
-    const domain = vintedChannel.url.match(/vinted\.(.*?)\//)[1];
+const sendToChannel = async (item, user, vinted-updatedChannel) => {
+    // get the domain from the URL between vinted-updated. and the next /
+    const domain = vinted-updatedChannel.url.match(/vinted-updated\.(.*?)\//)[1];
     const { embed, photosEmbeds } = await createVintedItemEmbed(item, domain);
     const actionRow = await createVintedItemActionRow(item, domain);
 
-    const doMentionUser = user && vintedChannel.preferences.get(Preference.Mention);
+    const doMentionUser = user && vinted-updatedChannel.preferences.get(Preference.Mention);
     const mentionString = doMentionUser ? `<@${user.discordId}>` : '';
 
     try {
         await postMessageToChannel(
             token,
-            vintedChannel.channelId,
+            vinted-updatedChannel.channelId,
             `${mentionString} `,
             [embed, ...photosEmbeds],
             [actionRow]
@@ -125,7 +125,7 @@ Logger.info(`Monitoring ${allMonitoringChannels.length} Vinted channels`);
 crud.eventEmitter.on('updated', async () => {
     allMonitoringChannels = await crud.getAllMonitoredVintedChannels();
     allMonitoringChannelsBrandMap = await crud.getAllMonitoredVintedChannelsBrandMap();
-    Logger.debug('Updated vinted channels');
+    Logger.debug('Updated vinted-updated channels');
 });
 
 const monitorChannels = () => {
