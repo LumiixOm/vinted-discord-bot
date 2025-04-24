@@ -69,8 +69,8 @@ You can later upgrade to Gold tier to enjoy insane features such as:
 1. Clone the repository from terminal or download through Github.
 
 ```bash
-git clone https://github.com/teddy-vltn/vinted-discord-bot.git
-cd vinted-monitor
+git clone https://github.com/teddy-vltn/vinted-updated-discord-bot.git
+cd vinted-updated-monitor
 ```
 
 2. Create a Discord bot in Discord's Developer Portal and invite it to your server:
