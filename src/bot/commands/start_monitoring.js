@@ -24,7 +24,7 @@ const VALID_BASE_URL = "catalog";
 function validateUrl(url) {
     try {
         // check if the route is the valid base URL
-        // https://www.vinted.fr/catalog?...
+        // https://www.vinted-updated.fr/catalog?...
         // split and find the catalog route
         // split the / and find the last element and compare it to the VALID_BASE_URL
         let route = new URL(url).pathname.split('/').pop();
@@ -95,14 +95,14 @@ export async function execute(interaction) {
         }
 
         // Find the VintedChannel by channelId and ensure it's owned by the user
-        const vintedChannel = user.channels.find(channel => channel.channelId === channelId && channel.user.equals(user._id));
-        if (!vintedChannel) {
+        const vinted-updatedChannel = user.channels.find(channel => channel.channelId === channelId && channel.user.equals(user._id));
+        if (!vinted-updatedChannel) {
             await sendErrorEmbed(interaction, t(l, 'channel-not-found-nor-owned'));
             return;
         }
 
         // Check if URL is provided or present in the VintedChannel
-        if (!url && !vintedChannel.url) {
+        if (!url && !vinted-updatedChannel.url) {
             await sendErrorEmbed(interaction, t(l, 'provide-vaild-url') + " " + t(l, url));
             return;
         }
@@ -115,7 +115,7 @@ export async function execute(interaction) {
         const embed = await createBaseEmbed(
             interaction,
             t(l, 'monitoring-started'),
-            t(l, 'monitoring-has-been-started', { url: url || vintedChannel.url}),
+            t(l, 'monitoring-has-been-started', { url: url || vinted-updatedChannel.url}),
             0x00FF00
         );
 
@@ -128,7 +128,7 @@ export async function execute(interaction) {
         await crud.setVintedChannelBannedKeywords(channelId, bannedKeywords);
 
         // Update the VintedChannel with the provided URL (if any) and set isMonitoring to true
-        await crud.startVintedChannelMonitoring(vintedChannel._id, url);
+        await crud.startVintedChannelMonitoring(vinted-updatedChannel._id, url);
     } catch (error) {
         console.error('Error starting monitoring session:', error);
         await sendErrorEmbed(interaction, 'There was an error starting the monitoring session.');
