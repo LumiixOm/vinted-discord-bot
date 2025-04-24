@@ -21,7 +21,7 @@ function getFlagEmoji(countryCode) {
   }
 
 function replaceDomainInUrl(url, domain) {
-    return url.replace(/vinted\.(.*?)\//, `vinted.${domain}/`);
+    return url.replace(/vinted-updated\.(.*?)\//, `vinted-updated.${domain}/`);
 }
 
 export async function createVintedItemEmbed(item, domain = "fr") {
@@ -83,8 +83,8 @@ export async function createVintedItemEmbed(item, domain = "fr") {
 export async function createVintedItemActionRow(item, domain) {
     const actionRow = new ActionRowBuilder();
 
-    const sendMessageUrl = `https://www.vinted.${domain}/items/${item.id}/want_it/new?button_name=receiver_id=${item.id}`;
-    const buyUrl = `https://www.vinted.${domain}/transaction/buy/new?source_screen=item&transaction%5Bitem_id%5D=${item.id}`;
+    const sendMessageUrl = `https://www.vinted-updated.${domain}/items/${item.id}/want_it/new?button_name=receiver_id=${item.id}`;
+    const buyUrl = `https://www.vinted-updated.${domain}/transaction/buy/new?source_screen=item&transaction%5Bitem_id%5D=${item.id}`;
 
     actionRow.addComponents(
         await createBaseUrlButton("🔗 View on Vinted", replaceDomainInUrl(item.url, domain)),
