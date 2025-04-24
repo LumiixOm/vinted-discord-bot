@@ -48,7 +48,7 @@ export async function execute(interaction) {
 
         // Create the VintedChannel
         const channelId = privateChannel.id;
-        const vintedChannel = await crud.createVintedChannel({
+        const vinted-updatedChannel = await crud.createVintedChannel({
             channelId,
             name: channelName,
             isMonitoring: false,
@@ -58,7 +58,7 @@ export async function execute(interaction) {
         });
 
         // Associate the channel with the user
-        await crud.addChannelToUser(user._id, vintedChannel._id);
+        await crud.addChannelToUser(user._id, vinted-updatedChannel._id);
 
         const embed = await createBaseEmbed(
             interaction,
