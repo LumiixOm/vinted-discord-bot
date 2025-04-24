@@ -18,14 +18,14 @@ export async function execute(interaction) {
         const channelId = interaction.channel.id;
 
         // Find the VintedChannel by channelId
-        const vintedChannel = await crud.getVintedChannelById(channelId);
-        if (!vintedChannel || vintedChannel.type !== 'public') {
+        const vinted-updatedChannel = await crud.getVintedChannelById(channelId);
+        if (!vinted-updatedChannel || vinted-updatedChannel.type !== 'public') {
             await sendErrorEmbed(interaction, 'Public channel not found.');
             return;
         }
         
         // Delete the VintedChannel from the database
-        await crud.deleteVintedChannel(vintedChannel._id);
+        await crud.deleteVintedChannel(vinted-updatedChannel._id);
 
         const embed = await createBaseEmbed(
             interaction,
