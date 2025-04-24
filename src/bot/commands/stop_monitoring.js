@@ -24,8 +24,8 @@ export async function execute(interaction) {
         }
 
         // Find the VintedChannel by channelId and ensure it's owned by the user
-        const vintedChannel = user.channels.find(channel => channel.channelId === channelId);
-        if (!vintedChannel) {
+        const vinted-updatedChannel = user.channels.find(channel => channel.channelId === channelId);
+        if (!vinted-updatedChannel) {
             await sendErrorEmbed(interaction, t(l, 'channel-not-found-nor-owned'));
             return;
         }
@@ -38,7 +38,7 @@ export async function execute(interaction) {
         );
 
         // Update the VintedChannel and set isMonitoring to false
-        await crud.stopVintedChannelMonitoring(vintedChannel._id);
+        await crud.stopVintedChannelMonitoring(vinted-updatedChannel._id);
         
         await crud.setVintedChannelUpdatedAtNow(channelId);
 
