@@ -265,8 +265,8 @@ async function setVintedChannelKeepMessageSent(channelId, keepMessageSent) {
  * @returns {Promise<Object>} - The created channel.
  */
 async function createVintedChannel({ channelId, lastUpdated = new Date(), name, url = null, isMonitoring = true, type = 'public', user = null, preferences = {}}) {
-    const vintedChannel = new VintedChannel({ channelId, lastUpdated, name, url, isMonitoring, type, user, preferences });
-    const result = await vintedChannel.save();
+    const vinted-updatedChannel = new VintedChannel({ channelId, lastUpdated, name, url, isMonitoring, type, user, preferences });
+    const result = await vinted-updatedChannel.save();
     eventEmitter.emit('updated');
     return result;
 }
