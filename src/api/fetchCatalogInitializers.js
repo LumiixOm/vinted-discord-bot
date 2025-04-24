@@ -3,7 +3,7 @@ import RequestBuilder from "../utils/request_builder.js";
 import ConfigurationManager from "../utils/config_manager.js";
 import { NotFoundError } from "../helpers/execute_helper.js";
 
-const extension = ConfigurationManager.getAlgorithmSetting.vinted_api_domain_extension
+const extension = ConfigurationManager.getAlgorithmSetting.vinted-updated_api_domain_extension
 
 /**
  * Fetch all catalog categories from Vinted
@@ -13,7 +13,7 @@ const extension = ConfigurationManager.getAlgorithmSetting.vinted_api_domain_ext
  */
 export async function fetchCatalogInitializer({ cookie }) {
     return await executeWithDetailedHandling(async () => {
-        const url = `https://www.vinted.${extension}/api/v2/catalog/initializers`;
+        const url = `https://www.vinted-updated.${extension}/api/v2/catalog/initializers`;
 
         const response = await RequestBuilder.get(url)
                         .setNextProxy()
