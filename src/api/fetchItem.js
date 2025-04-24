@@ -3,7 +3,7 @@ import RequestBuilder from "../utils/request_builder.js";
 import ConfigurationManager from "../utils/config_manager.js";
 import { NotFoundError, ForbiddenError, RateLimitError } from "../helpers/execute_helper.js";
 
-const extension = ConfigurationManager.getAlgorithmSetting.vinted_api_domain_extension
+const extension = ConfigurationManager.getAlgorithmSetting.vinted-updated_api_domain_extension
 
 /**
  * Handle errors during item fetching based on response code.
@@ -32,7 +32,7 @@ function handleFetchItemError(code) {
  */
 export async function fetchItem({ cookie, item_id }) {
     return await executeWithDetailedHandling(async () => {
-        const url = `https://www.vinted.${extension}/api/v2/items/${item_id}`;
+        const url = `https://www.vinted-updated.${extension}/api/v2/items/${item_id}`;
 
         const response = await RequestBuilder.get(url)
                         .setNextProxy()
