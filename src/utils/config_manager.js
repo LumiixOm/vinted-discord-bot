@@ -55,7 +55,7 @@ class ConfigurationManager {
      * @returns {Object} Algorithm settings object.
      */
     static getAlgorithmSetting = {
-        vinted_api_domain_extension: process.env.VINTED_API_DOMAIN_EXTENSION,
+        vinted-updated_api_domain_extension: process.env.VINTED_API_DOMAIN_EXTENSION,
         filter_zero_stars_profiles: process.env.ALGORITHM_FILTER_ZERO_STARS_PROFILES == 1 ? true : false,
         concurrent_requests: process.env.ALGORITHM_CONCURRENT_REQUESTS,
         blacklisted_countries_codes : process.env.BLACKLISTED_COUNTRIES_CODES.split(',') || []
