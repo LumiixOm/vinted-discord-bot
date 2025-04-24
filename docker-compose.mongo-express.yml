@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongo-express:
     image: mongo-express:latest
-    container_name: mongo_express_vinted
+    container_name: mongo_express_vinted-updated
     depends_on:
       - mongodb
     ports:
@@ -14,8 +14,8 @@ services:
       ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_EXPRESS_USERNAME}
       ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_PASSWORD}
     networks:
-      - vinted-network
+      - vinted-updated-network
 
 networks:
-  vinted-network:
+  vinted-updated-network:
     external: true
